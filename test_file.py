@@ -5,6 +5,8 @@ Draw a polygonal cat using Turtle graphics with a dash of randomness.
 import random
 import turtle
 
+import numpy as np
+
 
 def draw_polygon(pen, vertices, fill_color):
     """Draw a filled polygon from a list of (x, y) vertices."""
@@ -27,7 +29,11 @@ def jitter(vertices, amount=5):
     ]
 
 
-def polygonal_cat():
+def polygonal_cat(seed=None):
+    if seed is not None:
+        random.seed(seed)
+        np.random.seed(seed)
+
     turtle.colormode(255)
     screen = turtle.Screen()
     screen.bgcolor("#f0f0f0")
@@ -36,12 +42,21 @@ def polygonal_cat():
     pen.speed("fastest")
     pen.hideturtle()
 
+    base_palette = np.array(
+        [
+            [199, 181, 155],
+            [168, 142, 122],
+            [140, 120, 110],
+            [90, 70, 60],
+            [230, 200, 170],
+        ],
+        dtype=float,
+    )
+
+    # Slightly tweak palette so each run feels unique but stays cohesive.
     palette = [
-        (199, 181, 155),
-        (168, 142, 122),
-        (140, 120, 110),
-        (90, 70, 60),
-        (230, 200, 170),
+        tuple(np.clip(color + np.random.normal(0, 8, size=3), 60, 255).astype(int))
+        for color in base_palette
     ]
 
     body_color = random.choice(palette)
