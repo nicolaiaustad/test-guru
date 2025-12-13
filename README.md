@@ -11,7 +11,7 @@
 
 ### 2. Install Chrome Extension
 
-1. Download and unzip the `pr_quiz_extension.zip` file
+1. Download and unzip the `pr-quiz-extension.zip` file
 2. Open Chrome and navigate to `chrome://extensions`
 3. Enable **Developer mode** (toggle in the top-right corner)
 4. Click **Load unpacked**
