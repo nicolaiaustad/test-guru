@@ -15,7 +15,7 @@
 2. Open Chrome and navigate to `chrome://extensions`
 3. Enable **Developer mode** (toggle in the top-right corner)
 4. Click **Load unpacked**
-5. Select the unzipped `pr_quiz_extension` folder
+5. Select the unzipped `pr-quiz-extension` folder
 
 ## Usage
 
