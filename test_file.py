@@ -110,4 +110,6 @@ def polygonal_cat(seed=None):
 
 if __name__ == "__main__":
     polygonal_cat()
+    for i in range(10):
+        print(f"Hello, world! {i}")
 
